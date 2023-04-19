@@ -1,14 +1,5 @@
 import { Component } from '@angular/core';
 
-interface User {
-  name: string,
-  avatar: string,
-  url: string,
-  followers: number,
-  following: number,
-  public_repos: number,
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,6 +8,5 @@ interface User {
 })
 
 export class AppComponent {
-  // user: User = {}
-  imagePath = "/assets/pietro-photo.jpg"
+
 }
