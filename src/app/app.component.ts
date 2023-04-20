@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from './models/user';
 import { UserService } from './service/user.service';
 import { StarredRepos } from './models/github-starred-repos';
-import { faInbox, faStar, faUserPlus, faUserCheck } from '@fortawesome/free-solid-svg-icons';
 
+import { faInbox, faStar, faUserPlus, faUserCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
