@@ -3,21 +3,31 @@
 <div class="min-h-screen mt-8 mx-[200px]">
   <h1 class="text-3xl font-semibold text-gray-800 mb-4">Olá mundo doido, {{ user.name }}</h1>
 
-  <h3 class="text-xl font-semibold text-gray-800" >Informações do Github</h3>
-  <div>
-    <div>
-      <span> {{user.followers}} </span>
+  <h3 class="text-xl font-semibold text-gray-800">Informações do Github</h3>
+  <main class="w-full bg-gray-200 flex justify-between" >
+    <div class="bg-[#fff] rounded-lg flex flex-col overflow-hidden" >
+      <div class="flex items-center gap-2 p-5 justify-center border-b-[1px] border-gray-200 " >
+        <fa-icon [icon]="faUserCheck" />
+        <span>{{user.followers}}</span>
+      </div>
+      <div class="flex items-center gap-2 p-5 justify-center border-b-[1px] border-gray-200 " >
+        <fa-icon [icon]="faUserPlus" />
+        <span>{{user.following}}</span>
+      </div>
+      <div class="flex items-center gap-2 p-5 justify-center border-b-[1px] border-gray-200 " >
+        <fa-icon [icon]="faInbox" />
+        <span>{{user.public_repos}}</span>
+      </div>
+      <div class="flex items-center gap-2 p-5 justify-center" >
+        <fa-icon [icon]="faStar" />
+        <span>{{starredRepos.length}}</span>
+      </div>
     </div>
+
     <div>
-      <span> {{user.following}} </span>
+
     </div>
-    <div>
-      <span> {{user.public_repos}} </span>
-    </div>
-    <div>
-      <span> {{starredRepos.length}} </span>
-    </div>
-  </div>
+  </main>
 </div>
 
 <app-footer />

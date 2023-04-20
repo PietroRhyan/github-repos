@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from './models/user';
 import { UserService } from './service/user.service';
 import { StarredRepos } from './models/github-starred-repos';
+import { faInbox, faStar, faUserPlus, faUserCheck } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,11 @@ import { StarredRepos } from './models/github-starred-repos';
 export class AppComponent implements OnInit {
   user = {} as User;
   starredRepos = [] as StarredRepos[];
+
+  faInbox = faInbox
+  faStar = faStar
+  faUserPlus = faUserPlus
+  faUserCheck = faUserCheck
 
   constructor(private userService: UserService) {}
 
