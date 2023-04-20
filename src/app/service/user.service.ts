@@ -4,13 +4,15 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, throwError } from 'rxjs'
 import { retry, catchError } from 'rxjs/operators'
 import { User } from '../models/user';
+import { StarredRepos } from '../models/github-starred-repos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  url: string = 'https://api.github.com/users/pietrorhyan'
+  userUrl: string = 'https://api.github.com/users/pietrorhyan'
+  starredReposUrl: string = 'https://api.github.com/users/PietroRhyan/starred'
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +21,15 @@ export class UserService {
   }
 
   getUser(): Observable<User> {
-    return this.http.get<User>(this.url)
+    return this.http.get<User>(this.userUrl)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  getStars(): Observable<StarredRepos[]> {
+    return this.http.get<StarredRepos[]>(this.starredReposUrl)
       .pipe(
         retry(2),
         catchError(this.handleError)

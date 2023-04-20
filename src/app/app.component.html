@@ -1,7 +1,23 @@
 <app-navbar />
 
-<div class="h-screen" >
-  <h1>Olá mundo doido</h1>
+<div class="min-h-screen mt-8 mx-[200px]">
+  <h1 class="text-3xl font-semibold text-gray-800 mb-4">Olá mundo doido, {{ user.name }}</h1>
+
+  <h3 class="text-xl font-semibold text-gray-800" >Informações do Github</h3>
+  <div>
+    <div>
+      <span> {{user.followers}} </span>
+    </div>
+    <div>
+      <span> {{user.following}} </span>
+    </div>
+    <div>
+      <span> {{user.public_repos}} </span>
+    </div>
+    <div>
+      <span> {{starredRepos.length}} </span>
+    </div>
+  </div>
 </div>
 
 <app-footer />
