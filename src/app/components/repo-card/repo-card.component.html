@@ -1,0 +1,19 @@
+<div class="bg-[#fff] shadow-md rounded-lg flex flex-col gap-3 p-3 min-w-[200px] max-w-[280px]" >
+  <h4 class="text-md font-bold text-gray-800" >{{userRepos.name}}</h4>
+  <p class="text-sm text-gray-500" >{{userRepos.description}}</p>
+
+  <div class="flex items-center gap-5 mt-4" >
+    <div class="flex items-center gap-2 text-gray-500 text-xs" >
+      <fa-icon [icon]="faStar" />
+      <span>{{userRepos.stargazers_count}}</span>
+    </div>
+    <div class="flex items-center gap-2 text-gray-500 text-xs" >
+      <fa-icon [icon]="faCodeFork" />
+      <span>{{userRepos.forks}}</span>
+    </div>
+    <div class="flex items-center gap-2 text-gray-500 text-xs" >
+      <fa-icon [icon]="faEye" />
+      <span>{{userRepos.watchers}}</span>
+    </div>
+  </div>
+</div>
