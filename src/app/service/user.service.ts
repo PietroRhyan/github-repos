@@ -12,9 +12,9 @@ import { GithubRepos } from '../models/github-repos';
 })
 export class UserService {
 
-  userUrl: string = 'https://api.github.com/users/PietroRhyan'
-  userStarredReposUrl: string = 'https://api.github.com/users/PietroRhyan/starred'
-  userReposUrl: string = 'https://api.github.com/users/PietroRhyan/repos'
+  private userUrl: string = 'https://api.github.com/users/PietroRhyan'
+  private userStarredReposUrl: string = 'https://api.github.com/users/PietroRhyan/starred'
+  private userReposUrl: string = 'https://api.github.com/users/PietroRhyan/repos'
 
   constructor(private http: HttpClient) {}
 
