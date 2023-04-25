@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RepoCardComponent } from './components/repo-card/repo-card.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
+import { ContatoComponent } from './pages/contato/contato.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SobreComponent } from './pages/sobre/sobre.component';
     FooterComponent,
     RepoCardComponent,
     HomeComponent,
-    SobreComponent
+    SobreComponent,
+    ContatoComponent
   ],
   imports: [
     BrowserModule,
