@@ -22,9 +22,11 @@ export class ContatoComponent implements OnInit {
   get name() {
     return this.contactForm.get('name')!
   }
+
   get email() {
     return this.contactForm.get('email')!
   }
+
   get password() {
     return this.contactForm.get('password')!
   }

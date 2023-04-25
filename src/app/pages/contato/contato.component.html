@@ -2,42 +2,51 @@
   <div class="" >
     <h3 class="text-3xl text-gray-800 font-medium " >Entrar em contato com o <span class="text-purple-800 font-bold">brabo!</span></h3>
     <form class="flex flex-col justify-center mt-4" (submit)="submit()" [formGroup]="contactForm" #formDir="ngForm" >
-      <label class="text-md text-gray-800 font-medium mb-1" for="name">Nome:</label>
-      <input
-        class="bg-[#fff] p-2 text-gray-800 mb-2 rounded-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-purple-400"
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Digite seu nome"
-        formControlName="name"
-        required=""
-      >
-      <div *ngIf="name.invalid && formDir.submitted" >
-        <p>Nome é obrigatório</p>
+      <div class="flex flex-col justify-center mb-3" >
+        <label class="text-md text-gray-800 font-medium mb-1" for="name">Nome:</label>
+        <input
+          class="bg-[#fff] p-2 text-gray-800 rounded-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-purple-400"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Digite seu nome"
+          formControlName="name"
+          required=""
+        >
+        <div *ngIf="name.invalid && formDir.submitted" >
+          <p class="text-sm text-red-600 pl-2 mt-2 border-l-2 border-red-600">Nome é obrigatório</p>
+        </div>
       </div>
 
-      <label class="text-md text-gray-800 font-medium mb-1" for="email">E-mail:</label>
-      <input
-        class="bg-[#fff] p-2 text-gray-800 mb-2 rounded-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-purple-400"
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Digite seu email"
-      >
-      <div *ngIf="email.invalid && formDir.submitted" >
-        <p *ngIf="email.errors?.['required']">Email é obrigatório</p>
-        <p *ngIf="email.errors?.['email']">Campo deve ser um email</p>
+      <div class="flex flex-col justify-center mb-3" >
+        <label class="text-md text-gray-800 font-medium mb-1" for="email">E-mail:</label>
+        <input
+          class="bg-[#fff] p-2 text-gray-800 rounded-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-purple-400"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Digite seu email"
+          formControlName="email"
+        >
+        <div *ngIf="email.invalid && formDir.submitted" >
+          <p class="text-sm text-red-600 pl-2 mt-2 border-l-2 border-red-600" *ngIf="email.errors?.['required']">Email é obrigatório</p>
+          <p class="text-sm text-red-600 pl-2 mt-2 border-l-2 border-red-600" *ngIf="email.errors?.['email']">Campo deve ser um email</p>
+        </div>
       </div>
-      <label class="text-md text-gray-800 font-medium mb-1" for="password">Senha:</label>
-      <input
-        class="bg-[#fff] p-2 text-gray-800 mb-2 rounded-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-purple-400"
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Digite sua senha mais usada :)"
-      >
-      <div *ngIf="password.invalid && formDir.submitted" >
-        <p>Senha é obrigatório</p>
+
+      <div class="flex flex-col justify-center mb-3" >
+        <label class="text-md text-gray-800 font-medium mb-1" for="password">Senha:</label>
+        <input
+          class="bg-[#fff] p-2 text-gray-800 rounded-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-purple-400"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Digite sua senha mais usada :)"
+          formControlName="password"
+        >
+        <div *ngIf="password.invalid && formDir.submitted" >
+          <p class="text-sm text-red-600 pl-2 mt-2 border-l-2 border-red-600" *ngIf="password.errors?.['required']" >Senha é obrigatório</p>
+        </div>
       </div>
       <button class="py-2 bg-purple-800 rounded-lg text-md text-white font-semibold hover:bg-purple-700 transition-colors duration-300 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-purple-400" type="submit">Enviar</button>
     </form>
