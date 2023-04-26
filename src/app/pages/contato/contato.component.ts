@@ -36,6 +36,6 @@ export class ContatoComponent implements OnInit {
       return
     }
 
-    console.log("Formulário enviado")
+    console.log(this.contactForm.value)
   }
 }
